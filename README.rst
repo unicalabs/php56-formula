@@ -2,7 +2,7 @@
 php
 ===
 
-Formulas to set up and configure php and various php libraries.
+Formulas to set up and configure php 5.6 and various php 5.6 libraries from [Remi's RPM repository](http://rpms.famillecollet.com/), specifically under CentOS 7. Any other use will not result in expected behavior.
 
 .. note::
 
