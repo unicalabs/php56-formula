@@ -43,6 +43,13 @@ remi-php56:
 
 epel-release:
   pkg.installed
+
+php-symlink:
+  file.symlink:
+    - name: /bin/php
+    - target: /bin/php56
+    - require:
+      - pkg: php
 {% endif %}
 
 php:
