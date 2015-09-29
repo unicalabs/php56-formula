@@ -113,6 +113,11 @@ Disabled on opensuse no package.
 
 Installs the php-pear package.
 
+``php.pthreads``
+------------
+
+Installs the php-pthreads package.
+
 ``php.redis``
 ------------
 
@@ -149,3 +154,8 @@ Disabled on opensuse need server:php:extensions repo
 -----------
 
 Installs the php-xml package.
+
+``php.zts``
+-----------
+
+Links /bin/php to /bin/zts-php.
