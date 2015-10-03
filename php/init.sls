@@ -23,6 +23,15 @@ remi-gpg:
     - name: /etc/pki/rpm-gpg/RPM-GPG-KEY-remi
     - source: salt://php/files/RPM-GPG-KEY-remi
 
+remi:
+  pkgrepo.managed:
+    - humanname: Remi's RPM repository for Enterprise Linux 7 - $basearch
+    - mirrorlist: http://rpms.remirepo.net/enterprise/7/remi/mirror
+    - gpgcheck: 1
+    - gpgkey: file:///etc/pki/rpm-gpg/RPM-GPG-KEY-remi
+    - require: 
+      - file: remi-gpg
+
 remi-php56:
   pkgrepo.managed:
     - humanname: Remi's PHP 5.6 RPM repository for Enterprise Linux 7 - $basearch
@@ -42,6 +51,7 @@ php:
     - name: {{ php.php_pkg }}
     {%- if grains['os_family']=="RedHat" %}
     - require:
+      - pkgrepo: remi
       - pkgrepo: remi-php56
       - pkg: epel-release
     {% endif %}
